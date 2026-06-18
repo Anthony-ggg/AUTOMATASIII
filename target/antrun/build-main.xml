@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <mkdir dir="/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/target/generated-sources/cup/com/automatas/parser" />
+    <mkdir dir="/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/target/generated-sources/jflex" />
+  </target>
+</project>

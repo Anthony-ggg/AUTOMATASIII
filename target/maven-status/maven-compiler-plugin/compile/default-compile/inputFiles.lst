@@ -1,0 +1,11 @@
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/src/main/java/com/automatas/Main.java
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/src/main/java/com/automatas/controller/AnalyzerController.java
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/src/main/java/com/automatas/model/LexicalError.java
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/src/main/java/com/automatas/model/ParseRequest.java
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/src/main/java/com/automatas/model/ParseResponse.java
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/src/main/java/com/automatas/model/TokenDTO.java
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/src/main/java/com/automatas/service/LexicalAnalyzerService.java
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/src/main/java/com/automatas/service/TokenInjector.java
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/target/generated-sources/cup/com/automatas/parser/Parser.java
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/target/generated-sources/cup/com/automatas/parser/sym.java
+/home/gabriel/Desktop/Proyectos/Automatas/AUTOMATASIII/target/generated-sources/jflex/com/automatas/lexer/Lexer.java

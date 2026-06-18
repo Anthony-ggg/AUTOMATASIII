@@ -1,0 +1,12 @@
+com/automatas/model/ParseResponse.class
+com/automatas/lexer/Lexer.class
+com/automatas/model/TokenDTO.class
+com/automatas/service/TokenInjector.class
+com/automatas/parser/Parser.class
+com/automatas/Main.class
+com/automatas/model/ParseRequest.class
+com/automatas/service/LexicalAnalyzerService.class
+com/automatas/parser/sym.class
+com/automatas/model/LexicalError.class
+com/automatas/parser/Parser$CUP$Parser$actions.class
+com/automatas/controller/AnalyzerController.class

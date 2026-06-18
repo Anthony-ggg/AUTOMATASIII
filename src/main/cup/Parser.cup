@@ -1,0 +1,106 @@
+package com.automatas.parser;
+
+import java_cup.runtime.*;
+
+terminal           PLUS, MINUS, TIMES, DIVIDE, EQUALS, LPAREN, RPAREN;
+terminal String    IDENTIFIER;
+terminal Integer   NUMBER;
+
+non terminal Object program;
+non terminal Object equation_list;
+non terminal Object equation;
+non terminal Object expression;
+non terminal Object term;
+
+precedence left PLUS, MINUS;
+precedence left TIMES, DIVIDE;
+
+start with program;
+
+program ::= equation_list:el
+    {: RESULT = el; :}
+    ;
+
+equation_list ::= equation:eq
+    {:
+        java.util.List<Object> list = new java.util.ArrayList<>();
+        list.add(eq);
+        RESULT = list;
+    :}
+    | equation_list:list equation:eq
+    {:
+        ((java.util.List<Object>) list).add(eq);
+        RESULT = list;
+    :}
+    ;
+
+equation ::= expression:left EQUALS expression:right
+    {:
+        java.util.Map<String, Object> eq = new java.util.HashMap<>();
+        eq.put("left", left);
+        eq.put("right", right);
+        RESULT = eq;
+    :}
+    ;
+
+expression ::= expression:a PLUS expression:b
+    {:
+        java.util.Map<String, Object> node = new java.util.HashMap<>();
+        node.put("type", "binary");
+        node.put("operator", "+");
+        node.put("left", a);
+        node.put("right", b);
+        RESULT = node;
+    :}
+    | expression:a MINUS expression:b
+    {:
+        java.util.Map<String, Object> node = new java.util.HashMap<>();
+        node.put("type", "binary");
+        node.put("operator", "-");
+        node.put("left", a);
+        node.put("right", b);
+        RESULT = node;
+    :}
+    | expression:a TIMES expression:b
+    {:
+        java.util.Map<String, Object> node = new java.util.HashMap<>();
+        node.put("type", "binary");
+        node.put("operator", "*");
+        node.put("left", a);
+        node.put("right", b);
+        RESULT = node;
+    :}
+    | expression:a DIVIDE expression:b
+    {:
+        java.util.Map<String, Object> node = new java.util.HashMap<>();
+        node.put("type", "binary");
+        node.put("operator", "/");
+        node.put("left", a);
+        node.put("right", b);
+        RESULT = node;
+    :}
+    | term:t
+    {:
+        RESULT = t;
+    :}
+    ;
+
+term ::= IDENTIFIER:id
+    {:
+        java.util.Map<String, Object> node = new java.util.HashMap<>();
+        node.put("type", "identifier");
+        node.put("value", id);
+        RESULT = node;
+    :}
+    | NUMBER:num
+    {:
+        java.util.Map<String, Object> node = new java.util.HashMap<>();
+        node.put("type", "number");
+        node.put("value", num);
+        RESULT = node;
+    :}
+    | LPAREN expression:e RPAREN
+    {:
+        RESULT = e;
+    :}
+    ;
